@@ -1,25 +1,49 @@
-﻿namespace ManejoDeDatos
+﻿using ManejoDeDatos.Interfaces;
+using ManejoDeDatos.Models;
+using ManejoDeDatos.Repositories;
+
+namespace ManejoDeDatos
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        IEstuduanteUDLARepository _estuduanteUDLARepository;
+        EstudianteUDLA estudiante = new EstudianteUDLA();
 
         public MainPage()
         {
+            _estuduanteUDLARepository = new EstudianteUDLAPorArchivosRepository();
             InitializeComponent();
+
+
+            estudiante = _estuduanteUDLARepository.DevuelveEstudianteUDLA(1);
+
+            BindingContext = estudiante;
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private async void GuardarEstudiante_Click(object sender, EventArgs e)
         {
-            count++;
+            EstudianteUDLA estudiante = new EstudianteUDLA
+            {
+                Id = Int32.Parse(editor_id.Text),
+                Nombre = editor_nombre.Text,
+                Carrera = editor_carrera.Text,
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
+            };
+
+            bool guardar_estudiante = _estuduanteUDLARepository.CrearEstudianteUDLA(estudiante);
+
+            if (guardar_estudiante)
+            {
+                await DisplayAlert("Alert", "Todo bien y correcto", "Ok");
+                Navigation.PushAsync(new MainPage());
+            }
             else
-                CounterBtn.Text = $"Clicked {count} times";
+            {
+                await DisplayAlert("Alert", "Estas mal amigo", "Ok");
+            }
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
         }
+
     }
 
 }
