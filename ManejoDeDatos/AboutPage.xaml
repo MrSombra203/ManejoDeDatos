@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ManejoDeDatos.AboutPage"
+             Title="AboutPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Image
+                Source="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d3d64326-76e2-434f-bc29-e9b8a8a0f852/dgdp8tg-15c40344-9059-4242-be4e-f5b05ca6329c.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2QzZDY0MzI2LTc2ZTItNDM0Zi1iYzI5LWU5YjhhOGEwZjg1MlwvZGdkcDh0Zy0xNWM0MDM0NC05MDU5LTQyNDItYmU0ZS1mNWIwNWNhNjMyOWMuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Da3kfMuk_ECCpVSVGtOfvEzLIcKfmnHgr5Sjn3ZBZQw"
+                HeightRequest="150"
+                Aspect="AspectFit" />
+
+            <Label
+                Text="Nombre: Jose Miguel Vasconez"
+                FontSize="20"
+                FontAttributes="Bold" />
+
+            <Label
+                Text="Descripción personal: Soy alguien tranquilo que se la pasa en casa jugando videojuegos y buscado hacer cosas interesantes."
+                FontSize="16" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>  

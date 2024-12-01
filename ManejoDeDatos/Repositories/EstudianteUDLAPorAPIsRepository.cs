@@ -11,6 +11,7 @@ namespace ManejoDeDatos.Repositories
 {
     public class EstudianteUDLAPorAPIsRepository : IEstuduanteUDLARepository
     {
+        private readonly IEnumerable<EstudianteUDLA> estudiantesAPI;
         public string _urlEndpoint = "https://www.freetestapi.com/api/v1/students";
         private object response;
 
@@ -29,6 +30,8 @@ namespace ManejoDeDatos.Repositories
             throw new NotImplementedException();
         }
 
+
+
         public IEnumerable<EstudianteUDLA> DevuelveListadoEstudiantes()
         {
             using (HttpClient httpClient = new HttpClient()) 
@@ -38,6 +41,7 @@ namespace ManejoDeDatos.Repositories
 
                 List<EstudianteAPI> estudiantesAPI = JsonConvert.DeserializeObject<List<EstudianteAPI>>(json_data);
             }
+            return estudiantesAPI;
         }
 
         public bool EliminarEstudianteUDLA(int id)

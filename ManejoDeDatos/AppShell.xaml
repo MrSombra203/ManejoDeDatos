@@ -4,12 +4,21 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ManejoDeDatos"
-    Shell.FlyoutBehavior="Disabled"
-    Title="ManejoDeDatos">
+    Title="Manejo De Datos">
+    
+    
+    <FlyoutItem Title="Principal">
+        <ShellContent 
+            Title="Inicio" 
+            ContentTemplate="{DataTemplate local:MainPage}" 
+            Route="MainPage"/>
+    </FlyoutItem>
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <FlyoutItem Title="Información">
+        <ShellContent 
+            Title="About" 
+            ContentTemplate="{DataTemplate local:AboutPage}" 
+            Route="AboutPage"/>
+    </FlyoutItem>
 
 </Shell>
