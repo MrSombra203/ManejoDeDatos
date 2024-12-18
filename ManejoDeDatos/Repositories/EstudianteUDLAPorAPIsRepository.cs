@@ -41,7 +41,7 @@ namespace ManejoDeDatos.Repositories
 
                 List<EstudianteAPI> estudiantesAPI = JsonConvert.DeserializeObject<List<EstudianteAPI>>(json_data);
             }
-            return estudiantesAPI;
+            return new List<EstudianteUDLA>();
         }
 
         public bool EliminarEstudianteUDLA(int id)
