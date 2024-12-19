@@ -63,12 +63,15 @@ namespace ManejoDeDatos.Repositories
 
         public EstudianteUDLA DevuelveEstudianteUDLA(int id)
         {
-            var estudiantes = DevuelveListadoEstudiantes().ToList();
-            if (estudiantes.Any(item => item.Id == id))
+            try
             {
-                return estudiantes.Find(item => item.Id == id);
+                return _connection.Get<EstudianteUDLA>(id);
             }
-            return new EstudianteUDLA();
+            catch (Exception e)
+            {
+                return new EstudianteUDLA();
+            }
+
         }
 
         public IEnumerable<EstudianteUDLA> DevuelveListadoEstudiantes()
@@ -79,7 +82,7 @@ namespace ManejoDeDatos.Repositories
 
         public bool EliminarEstudianteUDLA(int id)
         {
-            int eliminar = _connection.Delete(id);
+            int eliminar = _connection.Delete<EstudianteUDLA>(id);
             if (eliminar > 0)
             {
                 return true;

@@ -1,26 +1,36 @@
 ﻿using ManejoDeDatos.Interfaces;
 using ManejoDeDatos.Models;
 using ManejoDeDatos.Repositories;
+using ManejoDeDatos.ViewModels;
 
 namespace ManejoDeDatos
 {
     public partial class MainPage : ContentPage
     {
-        IEstuduanteUDLARepository _estuduanteUDLARepository;
-        EstudianteUDLA estudiante = new EstudianteUDLA();
+        //IEstuduanteUDLARepository _estuduanteUDLARepository;
+        //EstudianteUDLA estudiante = new EstudianteUDLA();
 
         public MainPage()
         {
-            _estuduanteUDLARepository = new EstudianteUDLAPorArchivosRepository();
+            /*_estuduanteUDLARepository = new EstudianteUDLAPorArchivosRepository();
             InitializeComponent();
 
 
             estudiante = _estuduanteUDLARepository.DevuelveEstudianteUDLA(1);
 
-            BindingContext = estudiante;
+            BindingContext = estudiante;*/
+
+            InitializeComponent();
+            var viewModel = new EstudianteUDLAViewModel();
+            BindingContext = viewModel;
+
+            viewModel.ShowAlert += async () =>
+            {
+                await DisplayAlert("Alerta", "¡Se ha cambiado el mensaje!", "OK");
+            };
         }
 
-        private async void GuardarEstudiante_Click(object sender, EventArgs e)
+        /*private async void GuardarEstudiante_Click(object sender, EventArgs e)
         {
             EstudianteUDLA estudiante = new EstudianteUDLA
             {
@@ -40,9 +50,8 @@ namespace ManejoDeDatos
             else
             {
                 await DisplayAlert("Alert", "Estas mal amigo", "Ok");
-            }
+            }*/
 
-        }
 
     }
 
