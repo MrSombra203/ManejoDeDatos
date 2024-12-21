@@ -4,59 +4,66 @@
              xmlns:local ="clr-namespace:ManejoDeDatos.ViewModels"
              x:Class="ManejoDeDatos.MainPage">
 
-
     <ContentPage.BindingContext>
-        <local:EstudianteUDLAViewModel />
+        <local:EstudianteUDLAViewModelJMV />
     </ContentPage.BindingContext>
-
 
     <ScrollView>
         <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
+            Padding="30,20"
+            Spacing="15"
+            BackgroundColor="#f0f8ff">
 
             <Label
-               x:Name="lable_Titulo"               
-               Text="Jose Miguel Vasconez"/>
+               x:Name="labelTituloJMV"               
+               Text="Gestión de Estudiantes - José Miguel Vásconez"
+               FontSize="24"
+               TextColor="#2c3e50"
+               HorizontalOptions="Center" />
 
             <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
+                Source="https://i.ytimg.com/vi/ivtk9cLN3mY/hqdefault.jpg"
+                HeightRequest="150"
                 Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
+                Margin="0,10" />
 
-            <Editor x:Name="editor_id"
-                Placeholder="Ingrese el ID"
-                AutoSize="TextChanges"
-                HeightRequest="30"/>
+            <Editor x:Name="editorIdJMV"
+                Placeholder="Ingrese el ID del estudiante"
+                BackgroundColor="#ecf0f1"
+                HeightRequest="40"/>
 
-            <Editor x:Name="editor_nombre"
-                Placeholder="Ingrese el Nombre"
-                AutoSize="TextChanges"
-                HeightRequest="30"/>
+            <Editor x:Name="editorNombreJMV"
+                Placeholder="Ingrese el Nombre del estudiante"
+                BackgroundColor="#ecf0f1"
+                HeightRequest="40"/>
 
-            <Editor x:Name="editor_carrera"
-                Placeholder="Ingrese La carrera"
-                AutoSize="TextChanges"
-                HeightRequest="30"/>
-
-            <Label
-                x:Name="lable_id" 
-                Text="{Binding Id}"/>
+            <Editor x:Name="editorCarreraJMV"
+                Placeholder="Ingrese la Carrera del estudiante"
+                BackgroundColor="#ecf0f1"
+                HeightRequest="40"/>
 
             <Label
-                x:Name="lable_nombre" 
-                Text="{Binding Nombre}"/>
+                x:Name="labelIdJMV" 
+                Text="{Binding Id}" 
+                FontAttributes="Bold" />
 
             <Label
-                x:Name="lable_carrera" 
-                Text="{Binding Carrera}"/>
+                x:Name="labelNombreJMV" 
+                Text="{Binding Nombre}" 
+                FontAttributes="Bold" />
+
+            <Label
+                x:Name="labelCarreraJMV" 
+                Text="{Binding Carrera}" 
+                FontAttributes="Bold" />
 
             <Button
-                x:Name="GuardarEstudiante"
+                x:Name="btnGuardarEstudianteJMV"
                 Text="Guardar Estudiante"
+                BackgroundColor="#3498db"
+                TextColor="White"
                 Command="{Binding CommandGuardarEstudianteUDLA}" />
+
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

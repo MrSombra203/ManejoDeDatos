@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace ManejoDeDatos.ViewModels
 {
-    public class EstudianteUDLAViewModel : INotifyPropertyChanged
+    public class EstudianteUDLAViewModelJMV : INotifyPropertyChanged
     {
         private List<EstudianteUDLA> _estudiantesUDLA;
         public List<EstudianteUDLA> estudianteUDLA
@@ -27,7 +27,7 @@ namespace ManejoDeDatos.ViewModels
         }
         public ICommand CommandGuardarEstudianteUDLA { get; set; }
         public event Action ShowAlert;
-        public EstudianteUDLAViewModel()
+        public EstudianteUDLAViewModelJMV()
         {
             CommandGuardarEstudianteUDLA = new Command(GuardarEstudianteUDLA);
         }

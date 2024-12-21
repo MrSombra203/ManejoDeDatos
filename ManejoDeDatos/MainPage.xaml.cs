@@ -20,8 +20,8 @@ namespace ManejoDeDatos
 
             BindingContext = estudiante;*/
 
-            InitializeComponent();
-            var viewModel = new EstudianteUDLAViewModel();
+            InitializeComponent();  
+            var viewModel = new EstudianteUDLAViewModelJMV();
             BindingContext = viewModel;
 
             viewModel.ShowAlert += async () =>
